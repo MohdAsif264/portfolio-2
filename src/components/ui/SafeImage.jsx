@@ -34,18 +34,18 @@ export function SafeImage({
   if (!imgSrc || hasError) {
     if (placeholderType === 'portrait') {
       return (
-        <div className={`w-full h-full flex flex-col items-center justify-center p-6 bg-gradient-to-br from-[var(--color-navy-mid)] via-[var(--color-navy)] to-[var(--color-charcoal)] border border-[var(--color-gold)]/30 text-center select-none ${className}`}>
-          <div className="w-16 h-16 rounded-full border border-[var(--color-gold)]/40 flex items-center justify-center mb-3 bg-[var(--color-gold)]/5 shadow-[0_0_15px_rgba(201,168,76,0.15)]">
-            <User size={28} className="text-[var(--color-gold)]/80" />
+        <div className={`relative w-full h-full flex flex-col items-center justify-center p-8 bg-[radial-gradient(ellipse_at_top,var(--color-navy-mid),var(--color-navy)_60%,var(--color-charcoal))] text-center select-none ${className}`}>
+          <div className="w-20 h-20 rotate-45 border border-[var(--color-gold)]/50 flex items-center justify-center mb-6">
+            <User size={28} strokeWidth={1.25} className="-rotate-45 text-[var(--color-gold)]" />
           </div>
-          <div className="h-px w-14 bg-gradient-to-r from-transparent via-[var(--color-gold)]/60 to-transparent mb-2.5" />
-          <span className="font-serif text-sm sm:text-base text-[var(--color-ivory)] font-medium">
+          <span className="font-serif text-lg sm:text-xl text-[var(--color-ivory)]">
             {title || "Ranjeet Singh Patel"}
           </span>
-          <span className="font-sans text-[10px] text-[var(--color-gold)]/90 tracking-[0.2em] uppercase mt-1 font-medium">
+          <div className="h-px w-16 bg-gradient-to-r from-transparent via-[var(--color-gold)] to-transparent my-3" />
+          <span className="font-sans text-[11px] text-[var(--color-gold)] tracking-[0.22em] uppercase font-semibold">
             {subtitle || "Hotel General Manager"}
           </span>
-          <span className="font-sans text-[9px] text-[var(--color-muted)] mt-1">
+          <span className="font-sans text-xs text-[var(--color-muted)] mt-1.5">
             Hotel The Ideal · Kushinagar
           </span>
         </div>
@@ -54,15 +54,16 @@ export function SafeImage({
 
     // Default: Hotel / Architecture luxury placeholder
     return (
-      <div className={`w-full h-full flex flex-col items-center justify-center p-5 bg-gradient-to-br from-[var(--color-navy-mid)] to-[var(--color-charcoal)] border border-[var(--color-gold)]/20 text-center select-none ${className}`}>
-        <div className="w-12 h-12 rounded-full border border-[var(--color-gold)]/30 flex items-center justify-center mb-2.5 bg-[var(--color-gold)]/5">
-          <Building2 size={20} className="text-[var(--color-gold)]/70" />
+      <div className={`relative w-full h-full flex flex-col items-center justify-center p-6 bg-[radial-gradient(ellipse_at_top,var(--color-navy-mid),var(--color-navy)_70%)] text-center select-none ${className}`}>
+        <div aria-hidden="true" className="absolute inset-3 border border-[var(--color-gold)]/20 pointer-events-none" />
+        <div className="w-12 h-12 rotate-45 border border-[var(--color-gold)]/45 flex items-center justify-center mb-5">
+          <Building2 size={18} strokeWidth={1.25} className="-rotate-45 text-[var(--color-gold)]" />
         </div>
-        <div className="h-px w-12 bg-gradient-to-r from-transparent via-[var(--color-gold)]/40 to-transparent mb-2" />
-        <span className="font-serif text-sm text-[var(--color-ivory)]/90 font-medium px-2">
+        <span className="font-display text-xl sm:text-2xl text-[var(--color-ivory)] font-medium px-4 leading-tight max-w-xs">
           {title || "Hospitality Property"}
         </span>
-        <span className="font-sans text-[9px] text-[var(--color-gold)]/70 tracking-[0.2em] uppercase mt-1">
+        <div className="h-px w-12 bg-gradient-to-r from-transparent via-[var(--color-gold)]/70 to-transparent my-3" />
+        <span className="font-sans text-[10px] text-[var(--color-gold)]/90 tracking-[0.2em] uppercase px-6 max-w-sm leading-relaxed">
           {subtitle || "Kushinagar, Uttar Pradesh"}
         </span>
       </div>

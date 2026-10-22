@@ -22,40 +22,36 @@ export function Button({
   const shouldReduceMotion = useReducedMotion();
 
   const base = `
-    relative inline-flex items-center gap-2 font-sans font-medium tracking-wider uppercase
-    transition-all duration-300 cursor-pointer select-none border rounded-[2px] overflow-hidden
-    focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)] focus-visible:ring-offset-2
+    group relative inline-flex items-center justify-center gap-2.5 font-sans font-semibold uppercase
+    tracking-[0.18em] transition-[background-color,color,border-color,box-shadow] duration-300
+    cursor-pointer select-none border rounded-[1px] min-h-11
+    focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]
     disabled:opacity-50 disabled:cursor-not-allowed
   `;
 
   const sizes = {
-    sm:  'text-xs px-5 py-2.5',
-    md:  'text-xs px-7 py-3.5',
-    lg:  'text-sm px-10 py-4.5',
+    sm:  'text-[11px] px-5 py-2.5',
+    md:  'text-[11px] px-7 py-3.5',
+    lg:  'text-xs px-10 py-4',
   };
 
   const variants = {
     primary: `
-      bg-[var(--color-gold)] text-[var(--color-navy)] border-[var(--color-gold)]
+      bg-[var(--color-gold)] text-[var(--color-on-gold)] border-[var(--color-gold)]
       hover:bg-[var(--color-gold-light)] hover:border-[var(--color-gold-light)]
-      hover:shadow-[0_8px_30px_rgba(201,168,76,0.35)]
-      active:scale-95
+      hover:shadow-[var(--shadow-gold)]
     `,
     outline: `
-      bg-transparent text-[var(--color-gold)] border-[var(--color-gold)]
-      hover:bg-[var(--color-gold)] hover:text-[var(--color-navy)]
-      hover:shadow-[0_8px_30px_rgba(201,168,76,0.25)]
-      active:scale-95
+      bg-transparent text-[var(--color-gold)] border-[var(--color-gold)]/60
+      hover:border-[var(--color-gold)] hover:bg-[var(--color-gold)] hover:text-[var(--color-on-gold)]
     `,
     ghost: `
-      bg-transparent text-[var(--color-ivory)] border-transparent
-      hover:text-[var(--color-gold)] hover:border-transparent
-      active:scale-95
+      bg-transparent text-[var(--color-ivory)] border-transparent px-1!
+      hover:text-[var(--color-gold)]
     `,
     dark: `
-      bg-[var(--color-navy)] text-[var(--color-gold)] border-[var(--color-gold)]/30
-      hover:border-[var(--color-gold)] hover:bg-[var(--color-navy-light)]
-      active:scale-95
+      bg-[var(--color-surface)] text-[var(--color-ivory)] border-[var(--color-line-strong)]
+      hover:border-[var(--color-gold)] hover:text-[var(--color-gold)]
     `,
   };
 
@@ -69,14 +65,15 @@ export function Button({
     </>
   );
 
-  const hoverMotion = shouldReduceMotion ? {} : { scale: 1.025, y: -1 };
-  const tapMotion = shouldReduceMotion ? {} : { scale: 0.97 };
+  const hoverMotion = shouldReduceMotion ? {} : { y: -2 };
+  const tapMotion = shouldReduceMotion ? {} : { scale: 0.98 };
 
   // Internal routing link
   if (href && href.startsWith('/') && !download && !href.startsWith('/#')) {
     return (
       <MotionLink
         to={href}
+        onClick={onClick}
         className={classes}
         whileHover={hoverMotion}
         whileTap={tapMotion}
@@ -94,6 +91,7 @@ export function Button({
         download={download}
         target={target}
         rel={rel}
+        onClick={onClick}
         className={classes}
         whileHover={hoverMotion}
         whileTap={tapMotion}

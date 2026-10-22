@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
+import { reveal } from '../../utils/motion';
 
 export function SectionHeading({
   eyebrow,
@@ -18,36 +19,24 @@ export function SectionHeading({
 
   return (
     <motion.div
-      className={`flex flex-col ${alignClass} mb-10 sm:mb-14 ${className}`}
-      initial={shouldReduceMotion ? {} : { opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.7, ease: 'easeOut' }}
+      className={`flex flex-col ${alignClass} mb-12 sm:mb-16 ${className}`}
+      {...reveal(shouldReduceMotion)}
     >
       {eyebrow && (
-        <span className="text-[var(--color-gold)] font-sans text-xs tracking-[0.3em] uppercase font-medium mb-3">
+        <span className={`eyebrow mb-5 ${align === 'center' ? 'eyebrow--center' : ''}`}>
           {eyebrow}
         </span>
       )}
 
       <h2
-        className={`font-serif text-3xl md:text-4xl lg:text-5xl font-bold leading-tight ${
-          light ? 'text-white' : 'text-[var(--color-ivory)]'
-        }`}
+        className={`display-title max-w-3xl text-balance ${light ? 'text-white!' : ''}`}
       >
         {title}
       </h2>
 
-      {/* Gold divider */}
-      <div
-        className={`mt-5 h-px w-16 bg-gradient-to-r from-transparent via-[var(--color-gold)] to-transparent ${
-          align === 'left' ? 'mr-auto' : align === 'right' ? 'ml-auto' : 'mx-auto'
-        }`}
-      />
-
       {subtitle && (
         <p
-          className={`mt-5 max-w-2xl font-sans text-base md:text-lg leading-relaxed ${
+          className={`mt-6 max-w-2xl font-sans text-[15px] sm:text-base leading-relaxed text-pretty ${
             light ? 'text-[var(--color-ivory-dark)]' : 'text-[var(--color-muted)]'
           } ${align === 'center' ? 'mx-auto' : ''}`}
         >

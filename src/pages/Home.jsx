@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Hero } from '../components/sections/Hero';
 import { About } from '../components/sections/About';
+import { Journey } from '../components/sections/Journey';
 import { Expertise } from '../components/sections/Expertise';
 import { Experience } from '../components/sections/Experience';
 import { Projects } from '../components/sections/Projects';
@@ -17,6 +18,7 @@ export function Home() {
     <>
       <Hero />
       <About />
+      <Journey />
       <Expertise />
       <Experience />
       <Projects />

@@ -34,7 +34,8 @@ export const profile = {
   // Social Links (Set to real URLs only when supplied)
   socialLinks: {
     linkedin: null,
-    instagram: null,
+    instagram: "https://www.instagram.com/ranjeet4130singh?utm_source=qr&stkn=MThrZDdiMTdnM2Y3Yg%3D%3D",
+    facebook: "https://www.facebook.com/share/1DqWhSMr5v/",
     twitter: null,
   },
 

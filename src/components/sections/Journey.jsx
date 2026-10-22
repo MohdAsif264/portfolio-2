@@ -136,7 +136,7 @@ export function Journey() {
                 loading="lazy"
               />
               <span aria-hidden="true" className="absolute inset-3 sm:inset-4 border border-[#e4cfa0]/0 group-hover:border-[#e4cfa0]/60 transition-colors duration-700 pointer-events-none" />
-              <span className="absolute top-3 right-3 sm:top-5 sm:right-5 inline-flex items-center gap-2 px-3.5 py-2 bg-[#0a1424]/85 border border-[#c9a96e]/50 text-[#e4cfa0] font-sans text-[10px] font-semibold tracking-[0.2em] uppercase opacity-100 sm:opacity-0 sm:-translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 transition-all duration-500">
+              <span className="absolute top-3 right-3 sm:top-5 sm:right-5 inline-flex items-center gap-2 px-3.5 py-2 bg-[#0a1424]/85 border border-[#c9a96e]/50 text-[#e4cfa0] font-sans text-[11px] font-semibold tracking-[0.2em] uppercase opacity-100 sm:opacity-0 sm:-translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 transition-all duration-500">
                 <Expand size={12} strokeWidth={1.75} /> View
               </span>
             </button>

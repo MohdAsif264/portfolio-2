@@ -38,11 +38,11 @@ function HotelCard({ hotel, index, shouldReduceMotion }) {
         />
 
         {/* Badges */}
-        <span className="absolute top-4 left-4 pointer-events-none font-sans text-[10px] text-[var(--color-gold)] tracking-[0.2em] uppercase border border-[var(--color-gold)]/50 px-3 py-1 bg-[var(--color-navy)]/90 font-semibold">
+        <span className="absolute top-4 left-4 pointer-events-none font-sans text-[11px] text-[var(--color-gold)] tracking-[0.2em] uppercase border border-[var(--color-gold)]/50 px-3 py-1 bg-[var(--color-navy)]/90 font-semibold">
           {hotel.category}
         </span>
         <div className="absolute bottom-4 right-4 pointer-events-none">
-          <span className={`font-sans text-[10px] tracking-[0.14em] uppercase px-3 py-1 font-semibold ${
+          <span className={`font-sans text-[11px] tracking-[0.14em] uppercase px-3 py-1 font-semibold ${
             isActive
               ? 'bg-[var(--color-gold)] text-[var(--color-on-gold)]'
               : 'text-[var(--color-ivory)]/85 border border-[var(--color-line-strong)] bg-[var(--color-navy)]/90'
@@ -55,7 +55,7 @@ function HotelCard({ hotel, index, shouldReduceMotion }) {
       <div className="p-6 sm:p-8 flex flex-col flex-1">
         {/* Header */}
         <div className="mb-5">
-          <p className="label text-[10px]! mb-2">
+          <p className="label text-[11px]! mb-2">
             {hotel.designation}
           </p>
           <h3 className="font-display text-2xl sm:text-[1.75rem] text-[var(--color-ivory)] group-hover:text-[var(--color-gold)] transition-colors leading-tight font-medium">
@@ -76,7 +76,7 @@ function HotelCard({ hotel, index, shouldReduceMotion }) {
 
         {/* Core Focus tags */}
         <div className="mb-6">
-          <span className="label text-[10px]! block mb-3">
+          <span className="label text-[11px]! block mb-3">
             Operational Focus:
           </span>
           <ul className="flex flex-wrap gap-2">
@@ -148,13 +148,13 @@ export function Projects() {
 
         {/* Filter — segmented control */}
         <div className="flex justify-center mb-12">
-          <div role="group" aria-label="Filter properties" className="inline-flex flex-wrap justify-center border border-[var(--color-line-strong)] p-1 gap-1">
+          <div role="group" aria-label="Filter properties" className="grid grid-cols-[auto_1fr_1fr] sm:inline-flex w-full sm:w-auto border border-[var(--color-line-strong)] p-1 gap-1">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
                 aria-pressed={activeFilter === cat}
-                className={`font-sans text-[10px] sm:text-[11px] tracking-[0.1em] sm:tracking-[0.16em] uppercase px-3 sm:px-6 min-h-10 font-semibold transition-colors duration-300 ${
+                className={`font-sans text-[11px] leading-tight tracking-[0.1em] sm:tracking-[0.16em] uppercase px-3 sm:px-6 min-h-11 font-semibold transition-colors duration-300 ${
                   activeFilter === cat
                     ? 'bg-[var(--color-gold)] text-[var(--color-on-gold)]'
                     : 'text-[var(--color-muted)] hover:text-[var(--color-gold)]'

@@ -509,6 +509,30 @@ html.light, body.light {
   .font-serif, .font-display { overflow-wrap: break-word; }
 }
 
+/* Phone carousels: grid children become a snap-scrolling rail (SwipeRail) */
+@media (max-width: 639px) {
+  .swipe-rail {
+    display: flex !important;
+    gap: 0.75rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    margin-inline: -1.25rem;
+    padding-inline: 1.25rem;
+    scroll-padding-inline: 1.25rem;
+    border: 0 !important;
+    scrollbar-width: none;
+  }
+  .swipe-rail::-webkit-scrollbar { display: none; }
+  .swipe-rail:focus-visible { outline-offset: -2px; }
+  .swipe-rail > * {
+    flex: 0 0 84%;
+    scroll-snap-align: start;
+    border: 1px solid var(--color-line) !important;
+    background: var(--color-surface);
+  }
+}
+
 /* ─── Accessibility: Respect prefers-reduced-motion ─ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

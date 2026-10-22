@@ -6,6 +6,7 @@ import { ThemeToggle } from '../ui/ThemeToggle';
 import { NAV_LINKS } from '../../utils/constants';
 import { profile } from '../../data/profile';
 import { EASE_LUX } from '../../utils/motion';
+import { SocialLinks } from '../ui/SocialLinks';
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -56,7 +57,7 @@ export function Navbar() {
           {/* Wordmark */}
           <Link
             to="/"
-            className="group flex items-center gap-3 min-w-0"
+            className="group flex items-center gap-3 min-w-0 min-h-11"
             onClick={() => setMobileOpen(false)}
           >
             <span aria-hidden="true" className="hidden sm:flex w-9 h-9 shrink-0 rotate-45 border border-[var(--color-gold)]/60 items-center justify-center transition-colors group-hover:border-[var(--color-gold)]">
@@ -66,7 +67,7 @@ export function Navbar() {
               <span className="font-serif text-[1.05rem] sm:text-xl text-[var(--color-ivory)] leading-none tracking-wide group-hover:text-[var(--color-gold)] transition-colors whitespace-nowrap">
                 Ranjeet Singh Patel
               </span>
-              <span className="hidden sm:block font-sans text-[10px] text-[var(--color-gold)]/85 tracking-[0.24em] uppercase mt-1.5 whitespace-nowrap">
+              <span className="hidden sm:block font-sans text-[11px] lg:text-[10px] text-[var(--color-gold)]/85 tracking-[0.24em] uppercase mt-1.5 whitespace-nowrap">
                 General Manager · Hotel The Ideal
               </span>
             </span>
@@ -199,6 +200,8 @@ export function Navbar() {
                   Request Official CV
                 </Link>
               )}
+
+              <SocialLinks className="mt-4 justify-center" />
             </div>
           </motion.div>
         )}

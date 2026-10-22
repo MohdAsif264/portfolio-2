@@ -81,7 +81,7 @@ export function AboutPage() {
                     loading="lazy"
                   />
                   <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#0a1424]/80 to-transparent pointer-events-none" />
-                  <span className="absolute bottom-4 left-4 font-sans text-[10px] text-[#e4cfa0] tracking-[0.2em] uppercase font-semibold bg-[#0a1424]/85 px-3 py-1 border border-[#c9a96e]/50">
+                  <span className="absolute bottom-4 left-4 font-sans text-[11px] text-[#e4cfa0] tracking-[0.2em] uppercase font-semibold bg-[#0a1424]/85 px-3 py-1 border border-[#c9a96e]/50">
                     {item.subtitle}
                   </span>
                 </div>

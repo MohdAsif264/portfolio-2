@@ -3,6 +3,7 @@ import { Briefcase, GraduationCap, Building2, Languages, CheckCircle2 } from 'lu
 import { Container } from '../ui/Container';
 import { SectionHeading } from '../ui/SectionHeading';
 import { AnimatedCounter } from '../ui/AnimatedCounter';
+import { SwipeRail } from '../ui/SwipeRail';
 import { stats, achievements, values } from '../../data/achievements';
 import { reveal } from '../../utils/motion';
 
@@ -27,7 +28,7 @@ export function Achievements() {
         />
 
         {/* Verified Stats Band */}
-        <motion.div className="stat-band mb-24" {...reveal(shouldReduceMotion)}>
+        <motion.div className="stat-band mb-16 sm:mb-24" {...reveal(shouldReduceMotion)}>
           {stats.map((s, i) => {
             const Icon = statIcons[i % statIcons.length];
             return (
@@ -78,7 +79,7 @@ export function Achievements() {
               </p>
             </motion.div>
 
-            <div className="lg:col-span-8 hairline-grid sm:grid-cols-2">
+            <SwipeRail label="Professional Values & Service Standards" wrapperClassName="lg:col-span-8" className="hairline-grid sm:grid-cols-2">
               {values.map((val, idx) => (
                 <motion.div
                   key={val.id}
@@ -94,7 +95,7 @@ export function Achievements() {
                   </p>
                 </motion.div>
               ))}
-            </div>
+            </SwipeRail>
           </div>
         )}
       </Container>

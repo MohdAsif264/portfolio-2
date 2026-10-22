@@ -2,6 +2,7 @@ import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 import { ScrollProgress } from '../ui/ScrollProgress';
 import { WhatsAppButton } from '../ui/WhatsAppButton';
+import { MobileActionBar } from '../ui/MobileActionBar';
 
 export function MainLayout({ children }) {
   return (
@@ -14,6 +15,7 @@ export function MainLayout({ children }) {
       </main>
       <Footer />
       <WhatsAppButton />
+      <MobileActionBar />
     </div>
   );
 }

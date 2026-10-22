@@ -11,7 +11,7 @@ export function WhatsAppButton() {
   const waUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent("Hello Ranjeet, I am reaching out regarding your hospitality portfolio and Hotel The Ideal, Kushinagar.")}`;
 
   return (
-    <div className="fixed bottom-5 right-5 sm:bottom-7 sm:right-7 z-40 flex items-center gap-3">
+    <div className="hidden lg:flex fixed bottom-7 right-7 z-40 items-center gap-3">
       {/* Tooltip */}
       <AnimatePresence>
         {hovered && (

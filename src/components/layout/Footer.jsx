@@ -3,6 +3,7 @@ import { Phone, Mail, MapPin, MessageCircle, ArrowUp } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { profile } from '../../data/profile';
 import { NAV_LINKS } from '../../utils/constants';
+import { SocialLinks } from '../ui/SocialLinks';
 
 const CURRENT_YEAR = new Date().getFullYear();
 
@@ -16,14 +17,14 @@ export function Footer() {
     <footer aria-label="Site footer" className="relative bg-[var(--color-charcoal)] transition-colors duration-500">
       <div className="hairline hairline--center" />
 
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-20 pb-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-16 sm:pt-20 pb-28 lg:pb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-10 mb-16">
 
           {/* Brand Column */}
           <div className="md:col-span-2 lg:col-span-5">
             <Link to="/" className={`inline-block mb-6 group ${linkFocus}`}>
               <div className="font-serif text-3xl sm:text-4xl text-[var(--color-ivory)] group-hover:text-[var(--color-gold)] transition-colors">Ranjeet Singh Patel</div>
-              <div className="font-sans text-[10px] text-[var(--color-gold)] tracking-[0.3em] uppercase mt-3">
+              <div className="font-sans text-[11px] text-[var(--color-gold)] tracking-[0.3em] uppercase mt-3">
                 General Manager · Hotel The Ideal, Kushinagar
               </div>
             </Link>
@@ -56,12 +57,12 @@ export function Footer() {
           {/* Navigation */}
           <div className="lg:col-span-3 lg:col-start-6">
             <h4 className="label mb-6">Navigation</h4>
-            <ul className="space-y-3">
+            <ul className="grid grid-cols-2 sm:grid-cols-1 gap-x-6 lg:gap-y-3">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className={`font-sans text-sm text-[var(--color-ivory)]/75 hover:text-[var(--color-gold)] transition-colors animated-underline ${linkFocus}`}
+                    className={`inline-flex items-center min-h-11 lg:min-h-0 font-sans text-sm text-[var(--color-ivory)]/75 hover:text-[var(--color-gold)] transition-colors animated-underline ${linkFocus}`}
                   >
                     {link.label}
                   </Link>
@@ -70,7 +71,7 @@ export function Footer() {
               <li>
                 <Link
                   to="/projects"
-                  className={`font-sans text-sm text-[var(--color-ivory)]/75 hover:text-[var(--color-gold)] transition-colors animated-underline ${linkFocus}`}
+                  className={`inline-flex items-center min-h-11 lg:min-h-0 font-sans text-sm text-[var(--color-ivory)]/75 hover:text-[var(--color-gold)] transition-colors animated-underline ${linkFocus}`}
                 >
                   My Hospitality Journey
                 </Link>
@@ -81,26 +82,26 @@ export function Footer() {
           {/* Verified Contact Details */}
           <div className="lg:col-span-4 min-w-0">
             <h4 className="label mb-6">Direct Contact</h4>
-            <ul className="space-y-4">
+            <ul className="space-y-1 lg:space-y-4">
               <li>
                 <a
                   href={profile.mailUrl}
-                  className={`flex items-start gap-3 text-sm text-[var(--color-ivory)]/75 hover:text-[var(--color-gold)] transition-colors group ${linkFocus}`}
+                  className={`flex items-center lg:items-start gap-3 min-h-11 lg:min-h-0 text-sm text-[var(--color-ivory)]/75 hover:text-[var(--color-gold)] transition-colors group ${linkFocus}`}
                 >
-                  <Mail size={15} strokeWidth={1.5} className="mt-0.5 shrink-0 text-[var(--color-gold)]" />
+                  <Mail size={15} strokeWidth={1.5} className="lg:mt-0.5 shrink-0 text-[var(--color-gold)]" />
                   <span className="font-sans break-words min-w-0">{profile.email}</span>
                 </a>
               </li>
               <li>
                 <a
                   href={profile.telUrl}
-                  className={`flex items-start gap-3 text-sm text-[var(--color-ivory)]/75 hover:text-[var(--color-gold)] transition-colors group ${linkFocus}`}
+                  className={`flex items-center lg:items-start gap-3 min-h-11 lg:min-h-0 text-sm text-[var(--color-ivory)]/75 hover:text-[var(--color-gold)] transition-colors group ${linkFocus}`}
                 >
-                  <Phone size={15} strokeWidth={1.5} className="mt-0.5 shrink-0 text-[var(--color-gold)]" />
+                  <Phone size={15} strokeWidth={1.5} className="lg:mt-0.5 shrink-0 text-[var(--color-gold)]" />
                   <span className="font-sans">{profile.phone}</span>
                 </a>
               </li>
-              <li className="flex items-start gap-3 text-sm text-[var(--color-ivory)]/75">
+              <li className="flex items-start gap-3 text-sm text-[var(--color-ivory)]/75 pt-2.5 lg:pt-0">
                 <MapPin size={15} strokeWidth={1.5} className="mt-0.5 shrink-0 text-[var(--color-gold)]" />
                 <span className="font-sans">{profile.location}</span>
               </li>
@@ -109,11 +110,14 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-[var(--color-line)] flex flex-col sm:flex-row items-center justify-between gap-5 sm:pr-20">
+        <div className="pt-8 border-t border-[var(--color-line)] flex flex-col sm:flex-row items-center justify-between gap-5 lg:pr-20">
           <p className="font-sans text-xs text-[var(--color-muted)] text-center sm:text-left leading-relaxed">
             © {CURRENT_YEAR} Ranjeet Singh Patel · General Manager, Hotel The Ideal.
             <span className="block sm:inline sm:ml-2 text-[var(--color-gold)]/80">12 Years of Hospitality Experience.</span>
           </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+          <SocialLinks ringOffset="var(--color-charcoal)" />
+          <span aria-hidden="true" className="hidden sm:block w-px h-6 bg-[var(--color-line-strong)]" />
           <motion.button
             onClick={scrollTop}
             aria-label="Scroll to top"
@@ -123,6 +127,7 @@ export function Footer() {
           >
             <ArrowUp size={15} strokeWidth={1.5} />
           </motion.button>
+          </div>
         </div>
       </div>
     </footer>

@@ -63,7 +63,7 @@ export function SafeImage({
           {title || "Hospitality Property"}
         </span>
         <div className="h-px w-12 bg-gradient-to-r from-transparent via-[var(--color-gold)]/70 to-transparent my-3" />
-        <span className="font-sans text-[10px] text-[var(--color-gold)]/90 tracking-[0.2em] uppercase px-6 max-w-sm leading-relaxed">
+        <span className="font-sans text-[11px] text-[var(--color-gold)]/90 tracking-[0.2em] uppercase px-6 max-w-sm leading-relaxed">
           {subtitle || "Kushinagar, Uttar Pradesh"}
         </span>
       </div>

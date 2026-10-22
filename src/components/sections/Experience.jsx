@@ -8,7 +8,7 @@ import { reveal } from '../../utils/motion';
 
 function CurrentTag() {
   return (
-    <span className="inline-flex items-center gap-1.5 font-sans text-[10px] px-2.5 py-1 bg-[var(--color-gold)] text-[var(--color-on-gold)] tracking-[0.16em] uppercase font-semibold">
+    <span className="inline-flex items-center gap-1.5 font-sans text-[11px] px-2.5 py-1 bg-[var(--color-gold)] text-[var(--color-on-gold)] tracking-[0.16em] uppercase font-semibold">
       Current Profile
     </span>
   );
@@ -40,7 +40,7 @@ export function Experience() {
 
         {/* Highlight Banner */}
         <motion.div
-          className="lux-card corner-frame px-6 py-6 sm:px-8 mb-20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5"
+          className="lux-card corner-frame px-5 py-5 sm:px-8 sm:py-6 mb-14 sm:mb-20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5"
           {...reveal(shouldReduceMotion)}
         >
           <div>
@@ -57,7 +57,7 @@ export function Experience() {
         </motion.div>
 
         {/* Experience Timeline */}
-        <div className="mb-24">
+        <div className="mb-16 sm:mb-24">
           <SubHeading icon={Briefcase}>Hospitality Career History</SubHeading>
 
           <ol>
@@ -83,15 +83,15 @@ export function Experience() {
                   </div>
 
                   {/* Rail + card */}
-                  <div className={`relative pl-8 sm:pl-12 ${isLast ? '' : 'pb-10 sm:pb-12'}`}>
+                  <div className={`relative pl-6 sm:pl-12 ${isLast ? '' : 'pb-8 sm:pb-12'}`}>
                     <span aria-hidden="true" className={`absolute left-0 top-0 w-px ${isLast ? 'h-8' : 'bottom-0'} bg-[var(--color-line-strong)]`} />
                     <span aria-hidden="true" className={`timeline-node -left-[7px] top-6 ${exp.isCurrent ? 'timeline-node--current' : ''}`} />
 
-                    <article className={`lux-card lux-card-hover group p-6 sm:p-8 ${exp.isCurrent ? 'border-[var(--color-line-strong)]!' : ''}`}>
+                    <article className={`lux-card lux-card-hover group p-5 sm:p-8 ${exp.isCurrent ? 'border-[var(--color-line-strong)]!' : ''}`}>
                       {/* Mobile meta */}
                       <div className="lg:hidden flex flex-wrap items-center gap-3 mb-4">
                         {exp.period && (
-                          <span className="font-sans text-[10px] text-[var(--color-muted)] tracking-[0.16em] uppercase">
+                          <span className="font-sans text-[11px] text-[var(--color-muted)] tracking-[0.16em] uppercase">
                             {exp.period}
                           </span>
                         )}
@@ -151,7 +151,7 @@ export function Experience() {
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <div>
-                    <span className="label text-[10px]! block mb-2">
+                    <span className="label text-[11px]! block mb-2">
                       {edu.type}
                     </span>
                     <h4 className="font-display text-xl sm:text-2xl text-[var(--color-ivory)] leading-snug font-medium group-hover:text-[var(--color-gold)] transition-colors">
@@ -191,7 +191,7 @@ export function Experience() {
                 Explore the four hospitality properties across Kushinagar associated with Ranjeet Singh Patel.
               </p>
             </div>
-            <Button href="/projects" variant="outline" size="md" className="shrink-0" icon={<ArrowRight size={14} />}>
+            <Button href="/projects" variant="outline" size="md" className="shrink-0 w-full md:w-auto" icon={<ArrowRight size={14} />}>
               Explore The 4 Properties
             </Button>
           </motion.div>

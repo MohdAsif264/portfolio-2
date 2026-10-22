@@ -6,6 +6,8 @@ import { SectionHeading } from '../ui/SectionHeading';
 import { Button } from '../ui/Button';
 import { profile } from '../../data/profile';
 import { reveal } from '../../utils/motion';
+import { SocialLinks } from '../ui/SocialLinks';
+import { hasAnySocialProfile } from '../../utils/social';
 
 const contactMethods = [
   {
@@ -136,14 +138,14 @@ export function Contact() {
               {contactMethods.map((method, i) => (
                 <motion.li
                   key={method.label}
-                  className="py-6 border-b border-[var(--color-line)] flex items-start gap-5"
+                  className="py-5 sm:py-6 border-b border-[var(--color-line)] flex items-start gap-4 sm:gap-5"
                   {...reveal(shouldReduceMotion, { delay: i * 0.06, y: 14, amount: '-20px' })}
                 >
                   <div className="w-11 h-11 flex items-center justify-center border border-[var(--color-line-strong)] text-[var(--color-gold)] shrink-0">
                     {method.icon}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="label text-[10px]! mb-1.5">
+                    <div className="label text-[11px]! mb-1.5">
                       {method.label}
                     </div>
                     {method.href ? (
@@ -151,7 +153,7 @@ export function Contact() {
                         href={method.href}
                         target={method.href.startsWith('http') ? '_blank' : undefined}
                         rel="noopener noreferrer"
-                        className="font-display text-xl sm:text-[1.4rem] text-[var(--color-ivory)] hover:text-[var(--color-gold)] transition-colors block mb-1 break-all leading-snug focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]"
+                        className="font-display text-xl sm:text-[1.4rem] text-[var(--color-ivory)] hover:text-[var(--color-gold)] transition-colors flex items-center min-h-11 lg:min-h-0 lg:block mb-1 break-all leading-snug focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]"
                       >
                         {method.value}
                       </a>
@@ -168,7 +170,7 @@ export function Contact() {
                         href={method.href}
                         target={method.href.startsWith('http') ? '_blank' : undefined}
                         rel="noopener noreferrer"
-                        className="animated-underline inline-flex items-center gap-1 font-sans text-[11px] tracking-[0.14em] uppercase text-[var(--color-gold)] mt-3 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]"
+                        className="animated-underline inline-flex items-center gap-1 min-h-11 lg:min-h-0 font-sans text-[11px] tracking-[0.14em] uppercase text-[var(--color-gold)] mt-1 lg:mt-3 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-gold)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]"
                       >
                         {method.actionLabel} →
                       </a>
@@ -199,11 +201,18 @@ export function Contact() {
                 Open WhatsApp (+91 8707015028)
               </a>
             </motion.div>
+
+            {hasAnySocialProfile && (
+              <div className="mt-8">
+                <span className="label block mb-4">Follow</span>
+                <SocialLinks includeContact={false} />
+              </div>
+            )}
           </div>
 
           {/* Right — Professional Contact Form */}
           <motion.div
-            className="lg:col-span-7 lux-card corner-frame p-7 sm:p-10 lg:p-12"
+            className="lg:col-span-7 lux-card corner-frame p-6 sm:p-10 lg:p-12"
             {...reveal(shouldReduceMotion, { delay: 0.1 })}
           >
             {submitted ? (

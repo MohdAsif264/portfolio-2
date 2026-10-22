@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { Container } from '../ui/Container';
 import { SectionHeading } from '../ui/SectionHeading';
+import { SwipeRail } from '../ui/SwipeRail';
 import { hospitalitySkills, computerSkills, languageSkills } from '../../data/skills';
 import { reveal } from '../../utils/motion';
 
@@ -35,7 +36,7 @@ function CategoryHeader({ index, icon: Icon, title, caption }) {
         </span>
         <div>
           <h3 className="font-display text-2xl sm:text-3xl text-[var(--color-ivory)] font-medium leading-tight">{title}</h3>
-          <span className="label block mt-1 text-[10px]! sm:text-[11px]!">{caption}</span>
+          <span className="label block mt-1 text-[11px]!">{caption}</span>
         </div>
       </div>
       <span aria-hidden="true" className="hidden sm:block font-display text-5xl text-[var(--color-gold)]/25 leading-none">{index}</span>
@@ -43,9 +44,9 @@ function CategoryHeader({ index, icon: Icon, title, caption }) {
   );
 }
 
-function SkillGrid({ skills, icons, fallbackIcon, shouldReduceMotion }) {
+function SkillGrid({ skills, icons, fallbackIcon, shouldReduceMotion, label }) {
   return (
-    <div className="hairline-grid hairline-grid--surface sm:grid-cols-2 lg:grid-cols-3">
+    <SwipeRail label={label} className="hairline-grid hairline-grid--surface sm:grid-cols-2 lg:grid-cols-3">
       {skills.map((skill, i) => {
         const Icon = icons[skill.id] || fallbackIcon;
         return (
@@ -65,7 +66,7 @@ function SkillGrid({ skills, icons, fallbackIcon, shouldReduceMotion }) {
           </motion.div>
         );
       })}
-    </div>
+    </SwipeRail>
   );
 }
 
@@ -82,15 +83,15 @@ export function Expertise() {
         />
 
         {/* Category 1: Hospitality Experience */}
-        <div className="mb-20">
+        <div className="mb-16 sm:mb-20">
           <CategoryHeader index="01" icon={ConciergeBell} title="Hospitality Experience" caption="Front Office Services & Hotel Operations" />
-          <SkillGrid skills={hospitalitySkills} icons={hospitalityIcons} fallbackIcon={ConciergeBell} shouldReduceMotion={shouldReduceMotion} />
+          <SkillGrid label="Hospitality Experience" skills={hospitalitySkills} icons={hospitalityIcons} fallbackIcon={ConciergeBell} shouldReduceMotion={shouldReduceMotion} />
         </div>
 
         {/* Category 2: Computer Skills */}
-        <div className="mb-20">
+        <div className="mb-16 sm:mb-20">
           <CategoryHeader index="02" icon={Laptop} title="Computer Skills" caption="Diploma in Computer Applications (D.C.A.) Backing" />
-          <SkillGrid skills={computerSkills} icons={computerIcons} fallbackIcon={Laptop} shouldReduceMotion={shouldReduceMotion} />
+          <SkillGrid label="Computer Skills" skills={computerSkills} icons={computerIcons} fallbackIcon={Laptop} shouldReduceMotion={shouldReduceMotion} />
         </div>
 
         {/* Category 3: Languages */}
@@ -104,9 +105,9 @@ export function Expertise() {
                 className="lux-card lux-card-hover p-7 sm:p-9"
                 {...reveal(shouldReduceMotion, { delay: idx * 0.1, y: 16 })}
               >
-                <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                <div className="flex flex-col items-start sm:flex-row sm:flex-wrap sm:items-center justify-between gap-3 mb-4">
                   <span className="font-display text-3xl sm:text-4xl text-[var(--color-ivory)] font-medium">{lang.name}</span>
-                  <span className="label text-[10px]! px-3 py-1.5 border border-[var(--color-line-strong)]">
+                  <span className="label text-[11px]! px-3 py-1.5 border border-[var(--color-line-strong)]">
                     {lang.type}
                   </span>
                 </div>
